@@ -1,18 +1,28 @@
-const { getUsers } = require('../controllers/user')
+const { getUsers, getUser } = require('../controllers/user')
 
-const User = require('../schema/User.js')
+const { Users, User } = require('../schema/User')
 
 const getUsersOpts = {
   schema: {
     response: {
-      200: User
+      200: Users
     },
   },
   handler: getUsers
 }
 
+const getUserOpts = {
+  schema: {
+    response: {
+      200: User
+    },
+  },
+  handler: getUser
+}
+
 function userRoutes (fastify, options, done) {
   fastify.get('/api/user', getUsersOpts)
+  fastify.get('/api/user/:id', getUserOpts)
 
   done()
 }

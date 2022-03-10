@@ -1,4 +1,4 @@
-const User = {
+const Users = {
   type: 'array',
   items: {
     type: 'object',
@@ -14,4 +14,17 @@ const User = {
   }
 }
 
-module.exports = User
+const User = {
+  type: 'object',
+  properties: {
+    id: { type: 'number' },
+    email: { type: 'string' },
+    password: { type: 'string' },
+    firstname: { type: 'string'},
+    lastname: {type: 'string'},
+    avatar: {type: 'string'},
+    admin: {type: 'number'}
+  }
+}
+
+module.exports = { Users, User }

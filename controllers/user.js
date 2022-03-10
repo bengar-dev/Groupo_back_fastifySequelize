@@ -7,6 +7,13 @@ const getUsers = (req, res, next) => {
     .catch((error) => res.send(error), db.User.sync())
 }
 
+const getUser = (req, res, next) => {
+  db.User.findOne({where: {id: req.params.id}})
+    .then((user) => res.send(user))
+    .catch(error => res.send(error), db.User.sync())
+}
+
 module.exports = {
-  getUsers
+  getUsers,
+  getUser
 }
