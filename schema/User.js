@@ -27,4 +27,22 @@ const User = {
   }
 }
 
-module.exports = { Users, User }
+const SignupUser = {
+  type: 'object',
+  properties: {
+    email: {type: 'string'},
+    firstname: {type: 'string'},
+    lastname: {type: 'string'},
+    password: {type: 'string'}
+  }
+}
+
+const SigninUser = {
+  type: 'object',
+  properties: {
+    id: {type: 'number'},
+    email: {type: 'string'}
+  }
+}
+
+module.exports = { Users, User, SignupUser, SigninUser }
