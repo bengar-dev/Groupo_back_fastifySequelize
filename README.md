@@ -1,3 +1,3 @@
 # Groupomania back-end with fastify & Sequelize
 
-Practicing fastify with Groupomania's refacto
+I'm re-working my school project back-end using *fastify* instead of *express*
